@@ -1,0 +1,32 @@
+{
+	"name":"uyghur-font",
+	"version":"1.0",
+	"manifest_version":2,
+	"description":"this is a extension makes uyghur text more beautiful ...",
+	"icons":{
+		"48":"images/icon48.png",
+		"128":"images/icon128.png"
+	},
+	"permissions": [
+		"tabs", 
+		"activeTab",
+		"background",
+		"http://*/*", 
+		"https://*/*",
+	    "tabs",  
+	    "notifications",  
+	    "http://localhost:8080/",  
+	    "http://www.baidu.com/" 
+	],
+	"browser_action":{
+		"default_icon":"images/icon48.png",
+		"default_title":"uyghur-font",
+		"default_popup":"popup.html"
+	},
+	"content_scripts": [
+	    {
+	      "matches": ["http://www.aaaaa.com/*"],
+	      "js": ["myscript.js"]
+	    }
+  	]
+}
