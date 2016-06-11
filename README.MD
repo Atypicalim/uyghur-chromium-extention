@@ -19,6 +19,7 @@
 
 1. 在chrome地址栏输入 `chrome://extensions/` 打开浏览器扩展页面
 2. 再把把 `chrome-uyghur-font.crx` 文件拖到浏览器界面
+3. 然后在弹出的对话框点击 `添加应用扩展`
 
 
 ### 3. 在其他浏览器安装
@@ -35,7 +36,7 @@
 
 ---
 
-![before](abc.png)
+![before](https://raw.githubusercontent.com/kompasim/chrome-uyghur-font/master/images/before.png)
 
 ---
 
