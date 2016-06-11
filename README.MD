@@ -28,16 +28,16 @@
 * 把把 `chrome-uyghur-font.crx` 文件拖到浏览器界面
 
 
-## 4. 兼容
+### 4. 兼容
 
 * 基于chrome的大多数pc浏览器
 * chrome，UC浏览器，QQ浏览器 ...
 
 
----
+### 5. 使用之前
 
 ![before](https://raw.githubusercontent.com/kompasim/chrome-uyghur-font/master/images/before.png)
 
----
+### 6. 使用之后
 
 ![before](https://raw.githubusercontent.com/kompasim/chrome-uyghur-font/master/images/after.png)
