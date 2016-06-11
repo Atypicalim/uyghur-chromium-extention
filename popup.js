@@ -34,7 +34,7 @@ fonts.forEach( function(element, index) {
 	button.textContent = element["name"];
 	button.onclick = function(){
 		// add font family to all elements
-		var command = "var es = document.all; for(var i=0;i<es.length;i++){ if(es[i]['tagName']=='IFRAME'){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontFamily='"+element["font"]+"'; }  } es[i].style.fontFamily='"+element["font"]+"'; }";
+		var command = "var es = document.all; for(var i=0;i<es.length;i++){ if((es[i]['tagName']=='IFRAME')||(es[i]['tagName']=='FRAME')){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontFamily='"+element["font"]+"'; }  } es[i].style.fontFamily='"+element["font"]+"'; }";
 		chrome.tabs.executeScript(null,{code:command});
 		// add something else
 	}
@@ -46,7 +46,7 @@ fonts.forEach( function(element, index) {
 // listener to the input range component for font size
 var inputRange = document.getElementById("range");
 inputRange.onchange = function(){
-	var command = "var es = document.all; for(var i=0;i<es.length;i++){ if(es[i]['tagName']=='IFRAME'){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontSize='"+inputRange.value+"px'; }  } es[i].style.fontSize='"+inputRange.value+"px'; }";
+	var command = "var es = document.all; for(var i=0;i<es.length;i++){ if((es[i]['tagName']=='IFRAME')||(es[i]['tagName']=='FRAME')){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontSize='"+inputRange.value+"px'; }  } es[i].style.fontSize='"+inputRange.value+"px'; }";
 
 	//var command = "var es = document.all; for(var i=0;i<es.length;i++){ es[i].style.fontSize='"+inputRange.value+"px'; }";
 	chrome.tabs.executeScript(null,{code:command});
