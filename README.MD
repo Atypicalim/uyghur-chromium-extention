@@ -22,22 +22,30 @@
 3. 然后在弹出的对话框点击 `添加应用扩展`
 
 
-### 3. 在其他浏览器安装
+### 3. 开发者方式安装
+
+* 在chrome地址栏输入 `chrome://extensions/` 打开浏览器扩展页面
+* 点击 `加载已解压的扩展程序`
+* 选择刚刚clone下来的文件夹然后确定
+
+
+### 4. 在其他浏览器安装
 
 * 把 `chrome-uyghur-font.crx` 文件双击在要安装的浏览器打开
 * 把把 `chrome-uyghur-font.crx` 文件拖到浏览器界面
 
 
-### 4. 兼容
+
+### 5. 兼容
 
 * 基于chrome的大多数pc浏览器
 * chrome，UC浏览器，QQ浏览器 ...
 
 
-### 5. 使用之前
+### 6. 使用之前
 
 ![before](https://raw.githubusercontent.com/kompasim/chrome-uyghur-font/master/images/before.png)
 
-### 6. 使用之后
+### 7. 使用之后
 
 ![before](https://raw.githubusercontent.com/kompasim/chrome-uyghur-font/master/images/after.png)
