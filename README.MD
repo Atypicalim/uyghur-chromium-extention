@@ -1,4 +1,4 @@
-## chrome-uyghur-font 
+## chrome-uyghur-font
 
 
 
