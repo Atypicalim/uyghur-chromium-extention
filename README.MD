@@ -40,4 +40,4 @@
 
 ---
 
-![before](abc.png)
+![before](https://raw.githubusercontent.com/kompasim/chrome-uyghur-font/master/images/after.png)
