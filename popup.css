@@ -1,0 +1,54 @@
+* {
+	
+	font-family: "UKIJ Esliye Chiwer";
+	-webkit-touch-callout: none;  
+	-webkit-user-select: none;  
+	user-select: none; 
+	cursor:pointer;
+}
+
+body {
+	padding-bottom: 5px;
+	border-radius: 50px;
+	background: #000;
+	width: 100px;
+	height: 500px;
+	border:red 10px;
+}
+
+#box {
+	padding-top: 5px;
+	height: 100%;
+	width: 100%;
+	background: #222;
+	border-radius: 20px;
+}
+
+h3 {
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 2px black; 
+}
+
+#buttons {
+	margin-top: 10px;
+	margin: 0px auto;
+}
+
+button {
+	display: block;
+	width: 80px;
+	height: 30px;
+	margin: 10px auto;
+	background: #111;
+	border-radius: 5px;
+	outline: 0px;
+	color: #fff;
+	transition: all linear 0.1s;
+}
+
+button:hover {
+	background: black;
+	border-radius: 8px;
+	width: 85px;
+}

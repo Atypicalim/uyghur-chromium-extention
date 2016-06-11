@@ -26,7 +26,7 @@
 	"content_scripts": [
 	    {
 	      "matches": ["http://www.aaaaa.com/*"],
-	      "js": ["myscript.js"]
+	      "js": ["popup.js"]
 	    }
   	]
 }
