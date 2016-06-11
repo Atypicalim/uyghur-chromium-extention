@@ -3,10 +3,12 @@
 //chrome.tabs.executeScript(null,{code:"document.body.style.background='red';"});
 //window.close();
 
-// document.getElementById("text").onselectstart=function()//禁止文本被选中
-//       {
-//         return false;
-//       }
+// var iframes = document.getElementsByTagName("iframe");
+// for(var i=0; i<iframes.length;i++){
+// 	console.log(iframes[i]['tagName']);
+// }
+// iframe.contentWindow
+// chrome.tabs.executeScript(null,{code:"alert('"+val+"')"});
 
 
 // fotns and their names to be used to create buttons 
@@ -32,7 +34,7 @@ fonts.forEach( function(element, index) {
 	button.textContent = element["name"];
 	button.onclick = function(){
 		// add font family to all elements
-		var command = "var es = document.all; for(var i=0;i<es.length;i++){ es[i].style.fontFamily='"+element["font"]+"'; }";
+		var command = "var es = document.all; for(var i=0;i<es.length;i++){ if(es[i]['tagName']=='IFRAME'){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontFamily='"+element["font"]+"'; }  } es[i].style.fontFamily='"+element["font"]+"'; }";
 		chrome.tabs.executeScript(null,{code:command});
 		// add something else
 	}
@@ -40,6 +42,15 @@ fonts.forEach( function(element, index) {
 	buttons.appendChild(button);
 
 });
+
+// listener to the input range component for font size
+var inputRange = document.getElementById("range");
+inputRange.onchange = function(){
+	var command = "var es = document.all; for(var i=0;i<es.length;i++){ if(es[i]['tagName']=='IFRAME'){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontSize='"+inputRange.value+"px'; }  } es[i].style.fontSize='"+inputRange.value+"px'; }";
+
+	//var command = "var es = document.all; for(var i=0;i<es.length;i++){ es[i].style.fontSize='"+inputRange.value+"px'; }";
+	chrome.tabs.executeScript(null,{code:command});
+}
 
 
 
