@@ -1,5 +1,5 @@
-## chrome-uyghur-font
-
+## chrome-uyghur-font 
+ 
 
 
 > 当我用网易云音乐pc版听音乐的时候发现维吾尔文又小又乱，简直是不能容忍，于是有了此插件...
