@@ -1,9 +1,9 @@
 * {
-	
+
 	font-family: "UKIJ Esliye Chiwer";
-	-webkit-touch-callout: none;  
-	-webkit-user-select: none;  
-	user-select: none; 
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
 	cursor:pointer;
 }
 
@@ -27,7 +27,7 @@ body {
 h3 {
 	text-align: center;
 	color: white;
-	text-shadow: 2px 2px 2px black; 
+	text-shadow: 2px 2px 2px black;
 }
 
 #buttons {
@@ -58,4 +58,5 @@ button:hover {
 	width: 80px;
 	height: 40px;
 	margin: 0px auto;
+	outline: 0px;
 }
