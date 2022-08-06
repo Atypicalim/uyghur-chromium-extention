@@ -20,16 +20,31 @@ var keyboardUrl = "https://kompasim.github.io/others/kirguzguch.html";
 var emptyHeight = 150;
 var buttonHeight = 42.5;
 
+function runCommand(arguments) {
+	chrome.tabs.query({active: true, currentWindow: true}).then(([tab]) => {
+		arguments.target = {tabId: tab.id};
+		chrome.scripting.executeScript(arguments)
+	})
+}
+
 function onSizeChange(size) {
-	var command = "var es = document.all; for(var i=0;i<es.length;i++){ es[i].style.fontSize='" + size + "px'; }";
-	chrome.tabs.executeScript(null,{code:command});
+	runCommand({
+		function: (fontSize) => {
+			var es = document.all;
+			for(var i=0;i<es.length;i++){ es[i].style.fontSize= + fontSize + 'px'; }
+		},
+		args: [size],
+	})
 }
 
 function onFontClick(index) {
-	var conf = fonts[index];
-	var font = conf.font;
-	var command = "var es = document.all; for(var i=0;i<es.length;i++){ es[i].style.fontFamily='" + font + "'; }";
-	chrome.tabs.executeScript(null,{code:command});
+	runCommand({
+		function: (font) => {
+			var es = document.all;
+			for(var i=0;i<es.length;i++){ es[i].style.fontFamily = font.font; }
+		},
+		args: [fonts[index]],
+	})
 }
 
 function createFontButtons() {
@@ -77,7 +92,9 @@ function run() {
 		window.open(keyboardUrl, '_blank').focus();
 	}
 	// https://github.com/kompasim/uyghurche
-	chrome.tabs.executeScript( { file: "uyghurche.js" } );
+	runCommand({
+		files: ['uyghurche.js'],
+	})
 }
 
 document.fonts.ready.then(() => {
