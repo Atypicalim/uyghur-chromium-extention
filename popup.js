@@ -21,14 +21,14 @@ var emptyHeight = 150;
 var buttonHeight = 42.5;
 
 function onSizeChange(size) {
-	var command = "var es = document.all; for(var i=0;i<es.length;i++){ if((es[i]['tagName']=='IFRAME')||(es[i]['tagName']=='FRAME')){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontSize='" + size + "px'; }  } es[i].style.fontSize='" + size + "px'; }";
+	var command = "var es = document.all; for(var i=0;i<es.length;i++){ es[i].style.fontSize='" + size + "px'; }";
 	chrome.tabs.executeScript(null,{code:command});
 }
 
 function onFontClick(index) {
 	var conf = fonts[index];
 	var font = conf.font;
-	var command = "var es = document.all; for(var i=0;i<es.length;i++){ if((es[i]['tagName']=='IFRAME')||(es[i]['tagName']=='FRAME')){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontFamily='" + font + "'; }  } es[i].style.fontFamily='" + font + "'; }";
+	var command = "var es = document.all; for(var i=0;i<es.length;i++){ es[i].style.fontFamily='" + font + "'; }";
 	chrome.tabs.executeScript(null,{code:command});
 }
 
@@ -76,6 +76,8 @@ function run() {
 	document.getElementById("keyboard").onclick = function(){
 		window.open(keyboardUrl, '_blank').focus();
 	}
+	// https://github.com/kompasim/uyghurche
+	chrome.tabs.executeScript( { file: "uyghurche.js" } );
 }
 
 document.fonts.ready.then(() => {

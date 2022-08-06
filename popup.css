@@ -64,7 +64,17 @@ button:hover {
 #range {
 	display: block;
 	width: 80px;
-	height: 40px;
+	height: 30px;
 	margin: 0px auto;
 	outline: 0px;
+}
+
+#tip {
+	direction: rtl;
+	display: block;
+	width: 80px;
+	margin: 0px auto;
+	color: rgba(255, 255, 255, 0.849);
+	text-align: center;
+	font-size: 8px;
 }
