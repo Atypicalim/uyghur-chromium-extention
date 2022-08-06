@@ -1,18 +1,6 @@
 
-//chrome.tabs.executeScript(null,{code:"alert(123);"});
-//chrome.tabs.executeScript(null,{code:"document.body.style.background='red';"});
-//window.close();
-
-// var iframes = document.getElementsByTagName("iframe");
-// for(var i=0; i<iframes.length;i++){
-// 	console.log(iframes[i]['tagName']);
-// }
-// iframe.contentWindow
-// chrome.tabs.executeScript(null,{code:"alert('"+val+"')"});
-
-
 // fotns and their names to be used to create buttons 
-var fonts = [
+var FONTS = [
 	{"name":"تور ","font":"UKIJ Tuz Tor"},
 	{"name":"نەقىش ","font":"UKIJ Tuz Neqish"},
 	{"name":"كەسمە ","font":"UKIJ Chiwer Kesme"},
@@ -25,34 +13,71 @@ var fonts = [
 	{"name":"سۇلۇس ","font":"UKIJ Sulus Tom"}
 ];
 
-// get the father element for buttons 
-var buttons = document.getElementById("buttons");
-// create a button element to either of the fonts
-fonts.forEach( function(element, index) {
-	// create button
-	var button = document.createElement("button");
-	button.textContent = element["name"];
-	button.onclick = function(){
-		// add font family to all elements
-		var command = "var es = document.all; for(var i=0;i<es.length;i++){ if((es[i]['tagName']=='IFRAME')||(es[i]['tagName']=='FRAME')){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontFamily='"+element["font"]+"'; }  } es[i].style.fontFamily='"+element["font"]+"'; }";
-		chrome.tabs.executeScript(null,{code:command});
-		// add something else
-	}
-	// append to the father element
-	buttons.appendChild(button);
+var fonts =[];
+var buttonsNode = document.getElementById("buttons");
+var fontsUrl = "https://gitee.com/kompasim/uyghurFonts";
+var keyboardUrl = "https://kompasim.github.io/others/kirguzguch.html";
+var emptyHeight = 150;
+var buttonHeight = 42.5;
 
-});
-
-// listener to the input range component for font size
-var inputRange = document.getElementById("range");
-inputRange.onchange = function(){
-	var command = "var es = document.all; for(var i=0;i<es.length;i++){ if((es[i]['tagName']=='IFRAME')||(es[i]['tagName']=='FRAME')){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontSize='"+inputRange.value+"px'; }  } es[i].style.fontSize='"+inputRange.value+"px'; }";
-
-	//var command = "var es = document.all; for(var i=0;i<es.length;i++){ es[i].style.fontSize='"+inputRange.value+"px'; }";
+function onSizeChange(size) {
+	var command = "var es = document.all; for(var i=0;i<es.length;i++){ if((es[i]['tagName']=='IFRAME')||(es[i]['tagName']=='FRAME')){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontSize='" + size + "px'; }  } es[i].style.fontSize='" + size + "px'; }";
 	chrome.tabs.executeScript(null,{code:command});
 }
 
+function onFontClick(index) {
+	var conf = fonts[index];
+	var font = conf.font;
+	var command = "var es = document.all; for(var i=0;i<es.length;i++){ if((es[i]['tagName']=='IFRAME')||(es[i]['tagName']=='FRAME')){ var w=es[i].contentWindow; var wes = w.document.all; for(var j=0;j<wes.length;j++){ wes[j].style.fontFamily='" + font + "'; }  } es[i].style.fontFamily='" + font + "'; }";
+	chrome.tabs.executeScript(null,{code:command});
+}
 
+function createFontButtons() {
+	for (const index in fonts) {
+		var font = fonts[index];
+		var button = document.createElement("button");
+		button.textContent = font.name;
+		button.onclick = function(){
+			onFontClick(index);
+		}
+		buttonsNode.appendChild(button);
+	}
+}
 
+function createDownloadButton() {
+	var button = document.createElement("button");
+	button.textContent = "فونتلار";
+	button.onclick = function(){
+		window.open(fontsUrl, '_blank').focus();
+	}
+	buttonsNode.appendChild(button);
+}
 
+function run() {
+	for (const key in FONTS) {
+		var font = FONTS[key];
+		if (!document.fonts.check("16px '" + font.font + "'")) continue;
+		fonts.push(font);
+	}
+	//
+	var height = emptyHeight;
+	if (fonts.length > 0) {
+		createFontButtons();
+		height = height + buttonHeight * fonts.length;
+	} else {
+		createDownloadButton();
+		height = height + buttonHeight;
+	}
+	document.body.style.height = height + 'px';
+	//
+	document.getElementById("range").onchange = function(){
+		onSizeChange(this.value);
+	}
+	document.getElementById("keyboard").onclick = function(){
+		window.open(keyboardUrl, '_blank').focus();
+	}
+}
 
+document.fonts.ready.then(() => {
+	run();
+});

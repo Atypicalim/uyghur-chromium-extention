@@ -5,19 +5,27 @@
 	-webkit-user-select: none;
 	user-select: none;
 	cursor:pointer;
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
 }
 
 body {
-	padding-bottom: 5px;
 	border-radius: 50px;
-	background: #000;
-	width: 100px;
+	background: #222;
+	width: 125px;
 	height: 500px;
-	border:red 10px;
+	padding: 3px;
+}
+
+#border {
+	background: rgb(7, 7, 7);
+	padding: 7%;
+	width: 100%;
+	height: 100%;
 }
 
 #box {
-	padding-top: 5px;
 	height: 100%;
 	width: 100%;
 	background: #222;

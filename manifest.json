@@ -1,11 +1,13 @@
 {
-	"name":"uyghur-font",
+	"name":"uyghurche",
 	"version":"1.0",
 	"manifest_version":2,
-	"description":"this is a extension makes uyghur text more beautiful ...",
+	"description":"an chrome extension for uyghur language...",
 	"icons":{
-		"48":"images/icon48.png",
-		"128":"images/icon128.png"
+		"16":"images/icon.png",
+		"32":"images/icon.png",
+		"48":"images/icon.png",
+		"128":"images/icon.png"
 	},
 	"permissions": [
 		"tabs", 
@@ -15,12 +17,11 @@
 		"https://*/*",
 	    "tabs",  
 	    "notifications",  
-	    "http://localhost:8080/",  
-	    "http://www.baidu.com/" 
+	    "http://localhost:8080/" 
 	],
 	"browser_action":{
-		"default_icon":"images/icon48.png",
-		"default_title":"uyghur-font",
+		"default_icon":"images/icon.png",
+		"default_title":"uyghurche",
 		"default_popup":"popup.html"
 	},
 	"content_scripts": [
