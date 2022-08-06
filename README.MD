@@ -1,4 +1,4 @@
-## chrome-uyghur-font
+## uyghur-chromium-extention
 
 
 
@@ -13,14 +13,14 @@
 
 ### 1. 下载
 
-* `git clone http://github.com/kompasim/chrome-uyghur-font.git`
+* `git clone http://github.com/kompasim/uyghur-chromium-extention.git`
 
-* 如果你只想安装此插件那么你只需下载[chrome-uyghur-font.crx](http://github.com/kompasim/chrome-uyghur-font)
+* 如果你只想安装此插件那么你只需下载[uyghur-chromium-extention.crx](http://github.com/kompasim/uyghur-chromium-extention)
 
 ### 2. 在最新chrome安装
 
 1. 在chrome地址栏输入 `chrome://extensions/` 打开浏览器扩展页面
-2. 再把把 `chrome-uyghur-font.crx` 文件拖到浏览器界面
+2. 再把把 `uyghur-chromium-extention.crx` 文件拖到浏览器界面
 3. 然后在弹出的对话框点击 `添加应用扩展`
 
 
@@ -33,8 +33,8 @@
 
 ### 4. 在其他浏览器安装
 
-* 把 `chrome-uyghur-font.crx` 文件双击在要安装的浏览器打开
-* 把把 `chrome-uyghur-font.crx` 文件拖到浏览器界面
+* 把 `uyghur-chromium-extention.crx` 文件双击在要安装的浏览器打开
+* 把 `uyghur-chromium-extention.crx` 文件拖到浏览器界面
 
 
 
@@ -46,8 +46,8 @@
 
 ### 6. 使用之前
 
-![before](https://raw.githubusercontent.com/kompasim/chrome-uyghur-font/master/images/before.png)
+![before](https://raw.githubusercontent.com/kompasim/uyghur-chromium-extention/master/images/before.png)
 
 ### 7. 使用之后
 
-![before](https://raw.githubusercontent.com/kompasim/chrome-uyghur-font/master/images/after.png)
+![before](https://raw.githubusercontent.com/kompasim/uyghur-chromium-extention/master/images/after.png)

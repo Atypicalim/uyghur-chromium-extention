@@ -1,8 +1,9 @@
 {
 	"name":"uyghurche",
-	"version":"1.0",
+	"version":"1.1",
+	"author":"kompasim",
 	"manifest_version":2,
-	"description":"an chrome extension for uyghur language...",
+	"description":"an chromium extension for uyghur language...",
 	"icons":{
 		"16":"images/icon.png",
 		"32":"images/icon.png",
@@ -26,7 +27,7 @@
 	},
 	"content_scripts": [
 	    {
-	      "matches": ["http://www.aaaaa.com/*"],
+	      "matches": ["http://test.xyz/*"],
 	      "js": ["popup.js"]
 	    }
   	]
