@@ -1,7 +1,7 @@
 {
 	"name": "uyghurche",
 	"version": "1.1",
-	"author": "kompasim",
+	"author": "Atypicalim",
 	"manifest_version": 3,
 	"description": "an chromium extension for uyghur(uighur) language...",
 	"icons": {
