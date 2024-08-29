@@ -13,9 +13,9 @@
 
 ### 1. 下载
 
-* `git clone http://github.com/kompasim/uyghur-chromium-extention.git`
+* `git clone http://github.com/Atypicalim/uyghur-chromium-extention.git`
 
-* 如果你只想安装此插件那么你只需下载[uyghur-chromium-extention.crx](http://github.com/kompasim/uyghur-chromium-extention)
+* 如果你只想安装此插件那么你只需下载[uyghur-chromium-extention.crx](http://github.com/Atypicalim/uyghur-chromium-extention)
 
 ### 2. 在最新chrome安装
 
@@ -46,8 +46,8 @@
 
 ### 6. 使用之前
 
-![before](https://raw.githubusercontent.com/kompasim/uyghur-chromium-extention/master/images/before.png)
+![before](https://raw.githubusercontent.com/Atypicalim/uyghur-chromium-extention/master/images/before.png)
 
 ### 7. 使用之后
 
-![before](https://raw.githubusercontent.com/kompasim/uyghur-chromium-extention/master/images/after.png)
+![before](https://raw.githubusercontent.com/Atypicalim/uyghur-chromium-extention/master/images/after.png)
