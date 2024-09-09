@@ -15,8 +15,8 @@ var FONTS = [
 
 var fonts =[];
 var buttonsNode = document.getElementById("buttons");
-var fontsUrl = "https://gitee.com/kompasim/uyghurFonts";
-var keyboardUrl = "https://kompasim.github.io/others/kirguzguch.html";
+var fontsUrl = "https://mydown.yesky.com/pcsoft/244340791.html";
+var keyboardUrl = "https://Atypicalim.github.io/others/kirguzguch.html";
 var emptyHeight = 150;
 var buttonHeight = 42.5;
 
@@ -91,7 +91,7 @@ function run() {
 	document.getElementById("keyboard").onclick = function(){
 		window.open(keyboardUrl, '_blank').focus();
 	}
-	// https://github.com/kompasim/uyghurche
+	// https://github.com/Atypicalim/uyghurche
 	runCommand({
 		files: ['uyghurche.js'],
 	})
